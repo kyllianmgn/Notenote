@@ -1,9 +1,8 @@
 <?php
 session_start();
 if (!(isset($_SESSION['id_etudiant']))){
-    header('Location: ../index.php');
+    //header('Location: ../index.php');
 }
-var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,5 +14,12 @@ var_dump($_SESSION);
 <nav>
     <h3>Notenote</h3>
 </nav>
+<div class="vue">
+    <div class="section gauche">
+    </div>
+    <div class="section droite">
+    </div>
+</div>
+
 </body>
 </html>

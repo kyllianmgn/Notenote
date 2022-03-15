@@ -6,7 +6,7 @@ nav {
     width: 100%;
     background-color: red;
     margin: 0;
-    height: 50px;
+    height: 5%;
 }
 
 nav h3{
@@ -30,4 +30,32 @@ nav h3{
     background-color: green;
     width: 100%;
     height: 100%;
+}
+
+.vue{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section{
+    border-radius: 5px;
+    border: 1px #bbbbbb solid;
+    margin: 20px;
+}
+
+/* Page Eleve */
+
+.gauche{
+
+    display: inline-block;
+    width: 850px;
+    height: 500px;
+    background-color: blue;
+}
+
+.droite{
+    display: inline-block;
+    background-color: green;
+    width: 400px;
+    height: 500px;
 }
