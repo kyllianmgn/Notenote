@@ -22,7 +22,7 @@ session_destroy();
         <div hidden class="inner-bloc" id="etudiant">
             <button class="hide">Cacher</button>
             <h3>Eleve</h3>
-            <form method="post" action="">
+            <form method="post" action="src/traitrement/etudiant/connexion.php">
                 <label>Mail :
                     <input type="text" name="mail">
                 </label><br>

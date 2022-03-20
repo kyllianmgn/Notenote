@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!(isset($_SESSION['id_etudiant']))){
+if (!(isset($_SESSION['id_professeur']))){
     //header('Location: ../index.php');
 }
 ?>
