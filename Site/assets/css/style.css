@@ -48,14 +48,14 @@ nav h3{
 .gauche{
 
     display: inline-block;
-    width: 850px;
-    height: 500px;
-    background-color: blue;
+    width: 75%;
+    height: 90vh;
+
 }
 
 .droite{
     display: inline-block;
     background-color: green;
-    width: 400px;
-    height: 500px;
+    width: 25%;
+    height: 90vh;
 }
