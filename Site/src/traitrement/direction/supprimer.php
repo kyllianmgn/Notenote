@@ -1,6 +1,6 @@
 <?php
 require_once "../../bdd/BDD.php";
-require_once "../../modele/Direction.php";
+require_once "../../modele/compte/Direction.php";
 
 $bdd = new BDD();
 $direction = new Direction(array(

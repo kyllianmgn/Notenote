@@ -1,6 +1,6 @@
 <?php
 require_once "../../bdd/BDD.php";
-require_once "../../modele/Etudiant.php";
+require_once "../../modele/compte/Etudiant.php";
 
 $bdd = new BDD();
 $etudiant = new Etudiant(array(

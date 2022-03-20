@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../../bdd/BDD.php";
-require_once "../../modele/Professeur.php";
+require_once "../../modele/compte/Professeur.php";
 
 $bdd = new BDD();
 $professeur = new Professeur(array(
