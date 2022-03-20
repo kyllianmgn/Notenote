@@ -46,13 +46,13 @@ CREATE TABLE `dirige`(
 );
 
 CREATE TABLE `matiere`(
-     `id_matiere` int(11) NOT NULL,
+     `id_matiere` int(11) NOT NULL AUTO_INCREMENT,
      `nom` varchar(30) NOT NULL,
      PRIMARY KEY (`id_matiere`)
 );
 
 CREATE TABLE `classe`(
-      `id_classe` int(11) NOT NULL,
+      `id_classe` int(11) NOT NULL AUTO_INCREMENT,
       `nom` varchar(30) NOT NULL,
       PRIMARY KEY (`id_classe`)
 );
@@ -79,7 +79,7 @@ ALTER TABLE `devoir`
     ADD CONSTRAINT `fk_devoir_professeur` FOREIGN KEY (`ref_professeur`) REFERENCES `professeur` (`id_professeur`),
     ADD CONSTRAINT `fk_devoir_matiere` FOREIGN KEY (`ref_matiere`) REFERENCES `matiere` (`id_matiere`);
 
-CREATE USER 'ku_notenote_user'@'%' IDENTIFIED WITH mysql_native_password AS '***';
+CREATE USER 'ku_notenote_user'@'%' IDENTIFIED WITH mysql_native_password AS 'ku_notenote';
 GRANT USAGE ON *.* TO 'ku_notenote_user'@'%'
     REQUIRE NONE WITH
     MAX_QUERIES_PER_HOUR 0
