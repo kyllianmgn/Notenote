@@ -1,5 +1,5 @@
-CREATE DATABASE `kmn_notenote`;
-USE `kmn_notenote`;
+CREATE DATABASE `ku_notenote`;
+USE `ku_notenote`;
 
 CREATE TABLE `etudiant`(
   `id_etudiant` int(11) NOT NULL AUTO_INCREMENT,
