@@ -64,14 +64,17 @@ class Etudiant extends Compte {
     public function getId_etudiant(){
         return $this->id_etudiant;
     }
+
     /* @param mixed $id_etudiant */
     public function setId_etudiant($id_etudiant){
         $this->id_etudiant = $id_etudiant;
     }
+
     /* @return mixed */
     public function getRef_classe(){
         return $this->ref_classe;
     }
+
     /* @param mixed $ref_classe */
     public function setRef_classe($ref_classe){
         $this->ref_classe = $ref_classe;
