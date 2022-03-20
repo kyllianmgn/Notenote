@@ -78,3 +78,12 @@ ALTER TABLE `devoir`
     ADD CONSTRAINT `fk_devoir_classe` FOREIGN KEY (`ref_classe`) REFERENCES `classe` (`id_classe`),
     ADD CONSTRAINT `fk_devoir_professeur` FOREIGN KEY (`ref_professeur`) REFERENCES `professeur` (`id_professeur`),
     ADD CONSTRAINT `fk_devoir_matiere` FOREIGN KEY (`ref_matiere`) REFERENCES `matiere` (`id_matiere`);
+
+CREATE USER 'ku_notenote_user'@'%' IDENTIFIED WITH mysql_native_password AS '***';
+GRANT USAGE ON *.* TO 'ku_notenote_user'@'%'
+    REQUIRE NONE WITH
+    MAX_QUERIES_PER_HOUR 0
+    MAX_CONNECTIONS_PER_HOUR 0
+    MAX_UPDATES_PER_HOUR 0
+    MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON `ku_notenote`.* TO 'ku_notenote_user'@'%';
