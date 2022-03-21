@@ -1,7 +1,7 @@
 <?php
 require_once "../../bdd/BDD.php";
-require_once '../../modele/Php_Table.php';
-require_once '../../modele/compte/Compte.php';
+require_once "../../modele/Php_Table.php";
+require_once "../../modele/compte/Compte.php";
 require_once "../../modele/Matiere.php";
 
 $bdd = new BDD();
@@ -11,4 +11,4 @@ $matiere = new Matiere(array(
 ));
 
 $matiere->modifier($bdd);
-header("Location: ../../index.php");
+header("Location: ../../../index.php");
