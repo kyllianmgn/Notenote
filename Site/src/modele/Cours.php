@@ -25,6 +25,14 @@ class Cours extends Php_Table {
         return $req->fetchAll();
     }
 
+    public function afficherSpecific(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM cours WHERE ref_classe=:ref_classe");
+        $req->execute(array(
+            "ref_classe"=>$this->getRef_classe()
+        ));
+        return $req->fetchAll();
+    }
+
     public function modifier(BDD $bdd){
         $req = $bdd->getBdd()->prepare("UPDATE cours SET date = :date, heure_debut = :heure_debut, heure_fin = :heure_fin, ref_classe = :ref_classe, ref_matiere = :ref_matiere WHERE id_cours = :id_cours;");
         $req->execute(array(

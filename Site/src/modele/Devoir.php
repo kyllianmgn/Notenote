@@ -23,6 +23,15 @@ class Devoir extends Php_Table {
         return $req->fetchAll();
     }
 
+    public function afficherSpecific(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM devoir WHERE ref_classe=:ref_classe");
+        $req->execute(array(
+            "ref_classe"=>$this->getRef_classe()
+        ));
+        return $req->fetchAll();
+    }
+
+
     public function modifier(BDD $bdd){
         $req = $bdd->getBdd()->prepare("UPDATE devoir SET description = :description, ref_professeur = :ref_professeur, ref_classe = :ref_classe, ref_matiere = :ref_matiere WHERE id_devoir = :id_devoir;");
         $req->execute(array(

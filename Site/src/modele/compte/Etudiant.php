@@ -22,6 +22,14 @@ class Etudiant extends Compte {
         return $req->fetchAll();
     }
 
+    public function afficherById(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE id_etudiant=:id_etudiant;");
+        $req->execute(array(
+            "id_etudiant"=>$this->getId_etudiant()
+        ));
+        return $req->fetch();
+    }
+
     public function modifier(BDD $bdd){
         $req = $bdd->getBdd()->prepare("UPDATE etudiant SET nom = :nom, prenom = :prenom, mail = :mail, mdp = :mdp, ref_classe = :ref_classe WHERE id_etudiant = :id_etudiant;");
         $req->execute(array(
