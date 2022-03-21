@@ -41,7 +41,7 @@ $etudiant = new Etudiant(array());
                 <tr>
                 <?php
                     foreach ($etudiant->afficher($bdd) as $etudiants) {
-                        echo "<td>" . $etudiants['id_vol'] . "</td>
+                        echo "<td>" . $etudiants['id_etudiant'] . "</td>
                         <td>" . $etudiants['date_depart'] . "</td>
                         <td>" . $etudiants['heure_depart'] . "</td>
                         <td>" . $etudiants['heure_arrivee'] . "</td>";

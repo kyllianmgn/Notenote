@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "../../bdd/BDD.php";
+require_once '../../modele/Php_Table.php';
+require_once '../../modele/compte/Compte.php';
 require_once "../../modele/compte/Professeur.php";
 
 $bdd = new BDD();
@@ -13,5 +15,5 @@ if($professeur->connexion($bdd)){
     $_SESSION['id_professeur'] = $professeur->getId_professeur();
     header("Location: ../../vue/accueilProfesseur.php");
 } else {
-    header("Location: ../../index.php");
+    header("Location: ../../../index.php");
 }
