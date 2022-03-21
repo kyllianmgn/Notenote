@@ -7,6 +7,19 @@ class Devoir extends Php_Table {
     private $ref_classe;
     private $ref_matiere;
 
+    public function __construct(array $donnees){
+        $this->hydrate($donnees);
+    }
+
+    public function hydrate(array $donnees){
+        foreach ($donnees as $key => $value){
+            $method = 'set'.ucfirst($key);
+            if (method_exists($this,$method)){
+                $this->$method($value);
+            }
+        }
+    }
+
     public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO devoir(description, ref_professeur, ref_classe, ref_matiere) VALUES (:description, :ref_professeur, :ref_classe, :ref_matiere);");
         $req->execute(array(

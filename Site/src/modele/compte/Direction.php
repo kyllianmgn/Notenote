@@ -52,12 +52,13 @@ class Direction extends Compte {
     }
 
     public function connexion(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE mail = :mail AND mdp = :mdp;");
+        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE mail = :mail AND mdp = :mdp");
         $req->execute(array(
             "mail"=>$this->getMail(),
-            "mdp"=>$this->getMdp(),
+            "mdp"=>$this->getMdp()
         ));
         $res = $req->fetch();
+        var_dump($res);
         if($res){
             $this->setId_direction($res['id_direction']);
             $this->setNom($res['nom']);

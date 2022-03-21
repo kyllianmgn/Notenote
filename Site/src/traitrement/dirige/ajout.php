@@ -2,12 +2,12 @@
 require_once "../../bdd/BDD.php";
 require_once "../../modele/Php_Table.php";
 require_once "../../modele/compte/Compte.php";
-require_once "../../modele/Matiere.php";
-
+require_once "../../modele/Dirige.php";
 $bdd = new BDD();
-$matiere = new Matiere(array(
-    "nom"=>$_POST['nom'],
+$dirige = new Dirige(array(
+    "ref_Professeur" => $_POST['ref_professeur'],
+    "ref_Cours"=> $_POST['ref_cours']
 ));
 
-$matiere->ajout($bdd);
-header("Location: ../../../index.php");
+$dirige->ajout($bdd);
+header("Location: $_SERVER[HTTP_REFERER]");

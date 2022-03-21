@@ -10,4 +10,4 @@ $classe = new Classe(array(
 ));
 
 $classe->ajout($bdd);
-header("Location: ../../../index.php");
+header("Location: $_SERVER[HTTP_REFERER]");

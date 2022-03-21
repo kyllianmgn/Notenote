@@ -13,4 +13,4 @@ $devoir = new Devoir(array(
 ));
 
 $devoir->ajout($bdd);
-header("Location: ../../../index.php");
+header("Location: $_SERVER[HTTP_REFERER]");

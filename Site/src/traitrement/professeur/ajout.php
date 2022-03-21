@@ -13,4 +13,4 @@ $professeur = new Professeur(array(
 ));
 
 $professeur->ajout($bdd);
-header("Location: ../../../index.php");
+header("Location: $_SERVER[HTTP_REFERER]");

@@ -14,4 +14,4 @@ $cours = new Cours(array(
 ));
 
 $cours->ajout($bdd);
-header("Location: ../../../index.php");
+header("Location: $_SERVER[HTTP_REFERER]");
