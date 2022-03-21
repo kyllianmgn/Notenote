@@ -6,7 +6,7 @@ require_once "../../modele/compte/Direction.php";
 $bdd = new BDD();
 $direction = new Direction(array(
     "mail"=>$_POST['mail'],
-    "mdp"=>$_POST["mdp"],
+    "mdp"=>$_POST['mdp'],
 ));
 
 if($direction->connexion($bdd)){

@@ -1,6 +1,6 @@
 <?php
 
-abstract class Php_Table{
+abstract class Php_Table {
 
     public function __construct(array $donnees){
         $this->hydrate($donnees);

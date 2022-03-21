@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "../../bdd/BDD.php";
 require_once "../../modele/Classe.php";
 

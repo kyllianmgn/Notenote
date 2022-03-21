@@ -7,7 +7,7 @@ $professeur = new Professeur(array(
     "nom"=>$_POST['nom'],
     "prenom"=>$_POST['prenom'],
     "mail"=>$_POST['mail'],
-    "mdp"=>$_POST["mdp"],
+    "mdp"=>$_POST['mdp'],
 ));
 
 $professeur->ajout($bdd);

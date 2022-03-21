@@ -6,7 +6,7 @@ require_once "../../modele/compte/Etudiant.php";
 $bdd = new BDD();
 $etudiant = new Etudiant(array(
     "mail"=>$_POST['mail'],
-    "mdp"=>$_POST["mdp"],
+    "mdp"=>$_POST['mdp'],
 ));
 
 if($etudiant->connexion($bdd)){

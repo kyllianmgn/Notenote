@@ -9,7 +9,7 @@ $direction = new Direction(array(
     "nom"=>$_POST['nom'],
     "prenom"=>$_POST['prenom'],
     "mail"=>$_POST['mail'],
-    "mdp"=>$_POST["mdp"],
+    "mdp"=>$_POST['mdp'],
 ));
 
 $direction->modifier($bdd);
