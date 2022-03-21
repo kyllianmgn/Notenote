@@ -9,10 +9,13 @@ $direction = new Direction(array(
     "mail"=>$_POST['mail'],
     "mdp"=>$_POST['mdp'],
 ));
-
+var_dump($_POST);
+echo $direction->getMail();
+echo $direction->getMdp();
 if($direction->connexion($bdd)){
     $_SESSION['id_direction'] = $direction->getId_direction();
     header("Location: ../../vue/accueilDirection.php");
 } else {
-    header("Location: ../../../index.php");
+
+    //header("Location: ../../../index.php");
 }

@@ -45,7 +45,7 @@ class Professeur extends Compte {
         ));
         $res = $req->fetch();
         if($res){
-            $this->setId_professeur($res['id_etudiant']);
+            $this->setId_professeur($res['id_professeur']);
             $this->setNom($res['nom']);
             $this->setPrenom($res['prenom']);
             $this->setMail($res['mail']);

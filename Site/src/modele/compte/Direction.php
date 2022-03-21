@@ -3,6 +3,20 @@
 class Direction extends Compte {
     private $id_direction;
 
+    public function __construct(array $donnees){
+        parent::__construct($donnees);
+        $this->hydrate($donnees);
+    }
+
+    public function hydrate(array $donnees){
+        foreach ($donnees as $key => $value){
+            $method = 'set'.ucfirst($key);
+            if (method_exists($this,$method)){
+                $this->$method($value);
+            }
+        }
+    }
+
     public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO direction(nom, prenom, mail, mdp) VALUES (:nom,:prenom,:mail,:mdp);");
         $req->execute(array(
@@ -45,7 +59,7 @@ class Direction extends Compte {
         ));
         $res = $req->fetch();
         if($res){
-            $this->setId_direction($res['id_etudiant']);
+            $this->setId_direction($res['id_direction']);
             $this->setNom($res['nom']);
             $this->setPrenom($res['prenom']);
             $this->setMail($res['mail']);
