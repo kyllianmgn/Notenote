@@ -35,7 +35,7 @@ session_destroy();
         <div hidden class="inner-bloc" id="professeur">
             <button class="hide">Cacher</button>
             <h3>Professeur</h3>
-            <form method="post" action="">
+            <form method="post" action="src/traitrement/professeur/connexion.php">
                 <label>Mail :
                     <input type="text" name="mail">
                 </label><br>
@@ -48,7 +48,7 @@ session_destroy();
         <div hidden class="inner-bloc" id="direction">
             <button class="hide">Cacher</button>
             <h3>Direction</h3>
-            <form method="post" action="">
+            <form method="post" action="src/traitrement/direction/connexion.php">
                 <label>Mail :
                     <input type="text" name="mail">
                 </label><br>

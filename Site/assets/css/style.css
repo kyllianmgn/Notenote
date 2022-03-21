@@ -16,10 +16,10 @@ nav h3{
 
 .bloc-connexion{
     position: absolute;
-    top: 150px;
-    right: 150px;
-    width: 250px;
-    height: 300px;
+    top: 25%;
+    right: 12%;
+    width: 20%;
+    height: 50%;
     background-color: blue;
 }
 
@@ -48,14 +48,14 @@ nav h3{
 .gauche{
 
     display: inline-block;
-    width: 75%;
-    height: 90vh;
-
+    width: 850px;
+    height: 500px;
+    background-color: blue;
 }
 
 .droite{
     display: inline-block;
     background-color: green;
-    width: 25%;
-    height: 90vh;
+    width: 400px;
+    height: 500px;
 }
