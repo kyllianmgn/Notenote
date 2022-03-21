@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once "../../bdd/BDD.php";
-require_once '../../modele/Php_Table.php';
-require_once '../../modele/compte/Compte.php';
+require_once "../../modele/Php_Table.php";
+require_once "../../modele/compte/Compte.php";
 require_once "../../modele/compte/Etudiant.php";
 
 $bdd = new BDD();
@@ -16,4 +16,4 @@ $etudiant = new Etudiant(array(
 ));
 
 $etudiant->modifier($bdd);
-header("Location: ../../index.php");
+header("Location: ../../../index.php");

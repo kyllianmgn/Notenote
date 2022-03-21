@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once "../../bdd/BDD.php";
-require_once '../../modele/Php_Table.php';
-require_once '../../modele/compte/Compte.php';
+require_once "../../modele/Php_Table.php";
+require_once "../../modele/compte/Compte.php";
 require_once "../../modele/compte/Direction.php";
 
 $bdd = new BDD();
@@ -15,4 +15,4 @@ $direction = new Direction(array(
 ));
 
 $direction->modifier($bdd);
-header("Location: ../../index.php");
+header("Location: ../../../index.php");
