@@ -51,9 +51,10 @@ $etudiant = new Etudiant(array());
                         <td>Classe</td>
                     </tr>
                 </thead>
-                <tr>
+
                 <?php
                     foreach ($etudiant->afficher($bdd) as $etudiants) {
+                        echo "<tr>";
                         $classe = new Classe(array(
                                 "id_Classe"=>$etudiants['ref_classe']
                         ));
@@ -63,9 +64,10 @@ $etudiant = new Etudiant(array());
                         <td>" . $etudiants['prenom'] . "</td>
                         <td>" . $etudiants['mail'] . "</td>
                         <td>" . $classe['nom'] . "</td>";
+                        echo "</tr>";
                     }
                 ?>
-                </tr>
+
             </table>
         </div>
     </div>
