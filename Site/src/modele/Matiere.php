@@ -17,14 +17,6 @@ class Matiere extends Php_Table {
         return $req->fetchAll();
     }
 
-    public function afficherById(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM matiere WHERE id_matiere=:id_matiere");
-        $req->execute(array(
-            "id_matiere"=>$this->getId_matiere()
-        ));
-        return $req->fetch();
-    }
-
     public function modifier(BDD $bdd){
         $req = $bdd->getBdd()->prepare("UPDATE matiere SET nom = :nom WHERE id_matiere = :id_matiere;");
         $req->execute(array(
@@ -38,6 +30,14 @@ class Matiere extends Php_Table {
         $req->execute(array(
             "id_matiere"=>$this->getId_matiere()
         ));
+    }
+
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM matiere WHERE id_matiere = :id_matiere;");
+        $req->execute(array(
+            "id_matiere"=>$this->getId_matiere()
+        ));
+        return $req->fetch();
     }
 
     /* @return mixed */

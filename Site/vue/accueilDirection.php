@@ -58,7 +58,7 @@ $etudiant = new Etudiant(array());
                         $classe = new Classe(array(
                                 "id_Classe"=>$etudiants['ref_classe']
                         ));
-                        $classe = $classe->afficherById($bdd);
+                        $classe = $classe->rechercher($bdd);
                         echo "<td>" . $etudiants['id_etudiant'] . "</td>
                         <td>" . $etudiants['nom'] . "</td>
                         <td>" . $etudiants['prenom'] . "</td>
@@ -88,11 +88,11 @@ $etudiant = new Etudiant(array());
                     $classe = new Classe(array(
                         "id_Classe"=>$courss['ref_classe']
                     ));
-                    $classe = $classe->afficherById($bdd);
+                    $classe = $classe->rechercher($bdd);
                     $matiere = new Matiere(array(
                         "id_Matiere"=>$courss['ref_matiere']
                     ));
-                    $matiere = $matiere->afficherById($bdd);
+                    $matiere = $matiere->rechercher($bdd);
                     echo "<option value='".$courss['id_cours']."'>".$courss['date']." - de ".$courss['heure_debut']." à ".$courss['heure_fin']." - Matière : ".$matiere['nom']." Classe : ".$classe['nom']."</option>";
                 }
                 ?>

@@ -4,7 +4,6 @@ class Classe extends Php_Table {
     private $id_classe;
     private $nom;
 
-
     public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO classe(nom) VALUES (:nom);");
         $req->execute(array(
@@ -16,14 +15,6 @@ class Classe extends Php_Table {
         $req = $bdd->getBdd()->prepare("SELECT * FROM classe;");
         $req->execute();
         return $req->fetchAll();
-    }
-
-    public function afficherById(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM classe WHERE id_classe=:id_classe");
-        $req->execute(array(
-            "id_classe"=>$this->getId_classe()
-        ));
-        return $req->fetch();
     }
 
     public function modifier(BDD $bdd){
@@ -39,6 +30,14 @@ class Classe extends Php_Table {
         $req->execute(array(
             "id_classe"=>$this->getId_classe()
         ));
+    }
+
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM classe WHERE id_classe = :id_classe;");
+        $req->execute(array(
+            "id_classe"=>$this->getId_classe()
+        ));
+        return $req->fetch();
     }
 
     /* @return mixed */

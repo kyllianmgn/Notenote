@@ -1,12 +1,10 @@
 <?php
 
-class Dirige extends Php_Table
-{
+class Dirige extends Php_Table{
     private $ref_professeur;
     private $ref_cours;
 
-    public function ajout(BDD $bdd)
-    {
+    public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO dirige(ref_professeur, ref_cours) VALUES (:ref_professeur,:ref_cours);");
         $req->execute(array(
             "ref_professeur" => $this->getRefCours(),
@@ -14,8 +12,7 @@ class Dirige extends Php_Table
         ));
     }
 
-    public function afficher(BDD $bdd)
-    {
+    public function afficher(BDD $bdd){
         $req = $bdd->getBdd()->prepare("SELECT * FROM dirige;");
         $req->execute();
         return $req->fetchAll();

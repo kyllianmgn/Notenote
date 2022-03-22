@@ -41,15 +41,15 @@ $professeur = $professeur->afficherById($bdd);
                 $cours = new Cours(array(
                     "id_cours" => $diriges['ref_cours']
                 ));
-                $cours = $cours->afficherById($bdd);
+                $cours = $cours->rechercher($bdd);
                 $matiere = new Matiere(array(
                     "id_Matiere" => $cours['ref_matiere']
                 ));
-                $matiere = $matiere->afficherById($bdd);
+                $matiere = $matiere->rechercher($bdd);
                 $classe = new Classe(array(
                     "id_Classe" => $cours['ref_classe']
                 ));
-                $classe = $classe->afficherById($bdd);
+                $classe = $classe->rechercher($bdd);
                 $monCours["jour"] = date('w', strtotime($cours['date']));
                 $monCours["heure_debut"] = date("Hi", strtotime($cours['heure_debut']));
                 $monCours["heure_fin"] = date("Hi", strtotime($cours['heure_fin']));

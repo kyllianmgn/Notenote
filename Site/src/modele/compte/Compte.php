@@ -7,7 +7,6 @@ abstract class Compte extends Php_Table {
     private $mdp;
 
     abstract public function connexion(BDD $bdd);
-    abstract public function rechercher(BDD $bdd);
 
     /* @return mixed */
     public function getNom(){

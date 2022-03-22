@@ -38,16 +38,16 @@ $etudiant = $etudiant->rechercher($bdd);
             $cours = new Cours(array(
                 "ref_classe"=>$etudiant['ref_classe']
             ));
-            foreach ($cours->afficherSpecific($bdd) as $courss){
+            foreach ($cours->rechercheParClasse($bdd) as $courss){
                 $classe = new Classe(array(
                     "id_Classe"=>$courss['ref_classe']
                 ));
-                $classe = $classe->afficherById($bdd);
+                $classe = $classe->rechercher($bdd);
 
                 $matiere = new Matiere(array(
                     "id_Matiere"=>$courss['ref_matiere']
                 ));
-                $matiere = $matiere->afficherById($bdd);
+                $matiere = $matiere->rechercher($bdd);
 
                 $dirige = new Dirige(array(
                     "ref_Cours"=>$courss['id_cours']
@@ -146,7 +146,7 @@ $etudiant = $etudiant->rechercher($bdd);
             $devoir = new Devoir(array(
                     "ref_classe"=>$etudiant['ref_classe']
             ));
-        foreach ($devoir->afficherSpecific($bdd) as $devoirs){
+        foreach ($devoir->rechercher($bdd) as $devoirs){
             $professeur = new Professeur(array(
                 "id_professeur"=>$devoirs['ref_professeur']
             ));
@@ -154,7 +154,7 @@ $etudiant = $etudiant->rechercher($bdd);
             $matiere = new Matiere(array(
                 "id_matiere"=>$devoirs['ref_matiere']
             ));
-            $matiere = $matiere->afficherById($bdd);
+            $matiere = $matiere->rechercher($bdd);
             echo "'".$devoirs['description']."' donnée par ".$professeur['nom']." pour la matière ".$matiere['nom'];
         }
         ?>
