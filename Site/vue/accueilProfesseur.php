@@ -59,6 +59,8 @@ $professeur = $professeur->afficherById($bdd);
                 array_push($mesCours, $monCours);
             }
             ?>
+            <div class="jour-wrapper">
+                <p>Lundi</p>
             <div class="lundi jour">
                 <?php
                 foreach ($mesCours as $monCours){
@@ -68,6 +70,9 @@ $professeur = $professeur->afficherById($bdd);
                 }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Mardi</p>
             <div class="mardi jour">
                 <?php
                 foreach ($mesCours as $monCours){
@@ -78,6 +83,9 @@ $professeur = $professeur->afficherById($bdd);
                 }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Mercredi</p>
             <div class="mercredi jour">
                 <?php
                 foreach ($mesCours as $monCours){
@@ -87,6 +95,9 @@ $professeur = $professeur->afficherById($bdd);
                 }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Jeudi</p>
             <div class="jeudi jour">
                 <?php
                 foreach ($mesCours as $monCours){
@@ -96,6 +107,9 @@ $professeur = $professeur->afficherById($bdd);
                 }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Vendredi</p>
             <div class="vendredi jour">
                 <?php
                 foreach ($mesCours as $monCours){
@@ -104,6 +118,7 @@ $professeur = $professeur->afficherById($bdd);
                     }
                 }
                 ?>
+            </div>
             </div>
         </div>
     </div>

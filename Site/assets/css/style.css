@@ -84,18 +84,22 @@ nav h3{
     margin: 10px;
     padding: 10px;
     border-radius: 100px;
-    border: none;
+    border: 1px black solid;
     align-self: flex-start;
     transition: background-color .1s ease;
 }
 
-input[type='text'],input[type='password'],input[type='submit']{
+input[type='text'],input[type='password'],input[type='submit'],select,input[type='date'],input[type='time']{
     padding: 5px 10px;
     outline: none;
     border-radius: 50px;
     border: 1px black solid;
     margin: 10px;
     font-size: 1em;
+}
+
+#selectCours{
+    width: 50%;
 }
 
 .vue{
@@ -107,6 +111,7 @@ input[type='text'],input[type='password'],input[type='submit']{
     border-radius: 5px;
     border: 1px #bbbbbb solid;
     margin: 20px;
+    background-color: #e6ffe3;
 }
 
 /* Page Eleve */
@@ -121,7 +126,6 @@ input[type='text'],input[type='password'],input[type='submit']{
 
 .droite{
     display: inline-block;
-    background-color: green;
     width: 25vw;
     height: 90vh;
 }
@@ -139,22 +143,35 @@ input[type='text'],input[type='password'],input[type='submit']{
     width: 90%;
 }
 
+.jour-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+}
+
 .emploi-du-temps{
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: row;
 }
 
 .jour{
-    background-color: red;
-    width: 20%;
+    background-color: #c9c9c9;
+    width: 100%;
     height: 100%;
     border: 1px black solid;
 }
 
 .cours{
-    width: 100%;
+    width: 99%;
     position: relative;
-    background-color: yellow;
+    background-color: #b2ffac;
+    border: 1px black solid;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }

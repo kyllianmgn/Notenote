@@ -78,51 +78,66 @@ $etudiant = $etudiant->afficherById($bdd);
                 array_push($mesCours,$monCours);
             }
             ?>
+            <div class="jour-wrapper">
+                <p>Lundi</p>
             <div class="lundi jour">
                 <?php
                     foreach ($mesCours as $monCours){
-                        if ($monCours['jour']=='1'){
-                            echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Professeur : ".$monCours['professeur']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                        if ($monCours['jour']=='1' && $monCours['professeur']!=null){
+                            echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']."<br> Professeur : ".$monCours['professeur']."<br> Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
                         }
                     }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Mardi</p>
             <div class="mardi jour">
                 <?php
                 foreach ($mesCours as $monCours){
-                    if ($monCours['jour']=='2'){
+                    if ($monCours['jour']=='2' && $monCours['professeur']!=null){
 
-                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Professeur : ".$monCours['professeur']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']."<br> Professeur : ".$monCours['professeur']."<br> Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
                     }
                 }
                 ?>
             </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Mercredi</p>
             <div class="mercredi jour">
                 <?php
                 foreach ($mesCours as $monCours){
-                    if ($monCours['jour']=='3'){
-                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Professeur : ".$monCours['professeur']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    if ($monCours['jour']=='3' && $monCours['professeur']!=null){
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']."<br> Professeur : ".$monCours['professeur']."<br> Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
                     }
                 }
                 ?>
             </div>
-            <div class="jeudi jour">
-                <?php
-                foreach ($mesCours as $monCours){
-                    if ($monCours['jour']=='4'){
-                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Professeur : ".$monCours['professeur']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
-                    }
-                }
-                ?>
             </div>
-            <div class="vendredi jour">
-                <?php
-                foreach ($mesCours as $monCours){
-                    if ($monCours['jour']=='5'){
-                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Professeur : ".$monCours['professeur']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+            <div class="jour-wrapper">
+                <p>Jeudi</p>
+                <div class="jeudi jour">
+                    <?php
+                    foreach ($mesCours as $monCours){
+                        if ($monCours['jour']=='4' && $monCours['professeur']!=null){
+                            echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']."<br> Professeur : ".$monCours['professeur']."<br> Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
+            </div>
+            <div class="jour-wrapper">
+                <p>Vendredi</p>
+                <div class="vendredi jour">
+                    <?php
+                    foreach ($mesCours as $monCours){
+                        if ($monCours['jour']=='5' && $monCours['professeur']!=null){
+                            echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']."<br> Professeur : ".$monCours['professeur']."<br> Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                        }
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
@@ -132,33 +147,19 @@ $etudiant = $etudiant->afficherById($bdd);
                     "ref_classe"=>$etudiant['ref_classe']
             ));
         foreach ($devoir->afficherSpecific($bdd) as $devoirs){
-            echo $devoirs['description'];
+            $professeur = new Professeur(array(
+                "id_professeur"=>$devoirs['ref_professeur']
+            ));
+            $professeur = $professeur->afficherById($bdd);
+            $matiere = new Matiere(array(
+                "id_matiere"=>$devoirs['ref_matiere']
+            ));
+            $matiere = $matiere->afficherById($bdd);
+            echo "'".$devoirs['description']."' donnée par ".$professeur['nom']." pour la matière ".$matiere['nom'];
         }
         ?>
     </div>
 </div>
-<?php
-var_dump($dirige);
-var_dump($professeur);
-$cours = new Cours(array(
-    "ref_classe"=>$etudiant['ref_classe']
-));
-foreach ($cours->afficherSpecific($bdd) as $courss){
-    $classe = new Classe(array(
-        "id_Classe"=>$courss['ref_classe']
-    ));
-    $classe = $classe->afficherById($bdd);
-    $matiere = new Matiere(array(
-        "id_Matiere"=>$courss['ref_matiere']
-    ));
-    $matiere = $matiere->afficherById($bdd);
-    echo date("Hi", strtotime($courss['heure_debut']));
-    echo " ";
-    echo date("Hi", strtotime($courss['heure_fin']));
-    echo "<br>";
-    echo $courss['date']." - de ".$courss['heure_debut']." à ".$courss['heure_fin']." - Matière : ".$matiere['nom']." Classe : ".$classe['nom']."<br>";
-}
-?>
 <script>
 
     var cours = document.getElementsByClassName('cours')
