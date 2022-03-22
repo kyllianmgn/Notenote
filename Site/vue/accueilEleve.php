@@ -27,7 +27,7 @@ $etudiant = $etudiant->afficherById($bdd);
 </head>
 <body>
 <nav>
-    <h3>Notenote</h3>
+    <h3><a href="../index.php">Notenote</a></h3>
 </nav>
 <div class="vue">
     <div class="section gauche">
@@ -126,9 +126,6 @@ $etudiant = $etudiant->afficherById($bdd);
             </div>
         </div>
     </div>
-    <?php
-    var_dump($mesCours);
-    ?>
     <div class="section droite">
         <?php
             $devoir = new Devoir(array(

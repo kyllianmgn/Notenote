@@ -21,41 +21,35 @@ session_destroy();
         <button id="button-professeur">Professeur</button>
         <button id="button-direction">Direction</button>
         <div hidden class="inner-bloc" id="etudiant">
-            <button class="hide">Cacher</button>
-            <h3>Eleve</h3>
+            <button class="hide">Retour</button>
+            <h2>Eleve</h2>
             <form method="post" action="src/traitrement/etudiant/connexion.php">
-                <label>Mail :
-                    <input type="text" name="mail">
-                </label><br>
-                <label>Mot de passe :
-                    <input type="password" name="mdp">
-                </label>
+                <input type="text" name="mail" placeholder="Mail">
+                <br>
+                <input type="password" name="mdp" placeholder="Mot De Passe">
+                <br>
                 <input type="submit" value="Se Connecter">
             </form>
         </div>
         <div hidden class="inner-bloc" id="professeur">
-            <button class="hide">Cacher</button>
-            <h3>Professeur</h3>
+            <button class="hide">Retour</button>
+            <h2>Professeur</h2>
             <form method="post" action="src/traitrement/professeur/connexion.php">
-                <label>Mail :
-                    <input type="text" name="mail">
-                </label><br>
-                <label>Mot de passe :
-                    <input type="password" name="mdp">
-                </label>
+                <input type="text" name="mail" placeholder="Mail">
+                <br>
+                <input type="password" name="mdp" placeholder="Mot De Passe">
+                <br>
                 <input type="submit" value="Se Connecter">
             </form>
         </div>
         <div hidden class="inner-bloc" id="direction">
-            <button class="hide">Cacher</button>
-            <h3>Direction</h3>
+            <button class="hide">Retour</button>
+            <h2>Direction</h2>
             <form method="post" action="src/traitrement/direction/connexion.php">
-                <label>Mail :
-                    <input type="text" name="mail">
-                </label><br>
-                <label>Mot de passe :
-                    <input type="password" name="mdp">
-                </label>
+                <input type="text" name="mail" placeholder="Mail">
+                <br>
+                <input type="password" name="mdp" placeholder="Mot De Passe">
+                <br>
                 <input type="submit" value="Se Connecter">
             </form>
         </div>

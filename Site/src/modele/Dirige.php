@@ -30,6 +30,15 @@ class Dirige extends Php_Table
         return $req->fetch();
     }
 
+    public function afficherByProfesseur(BDD $bdd)
+    {
+        $req = $bdd->getBdd()->prepare("SELECT * FROM dirige WHERE ref_professeur=:ref_professeur");
+        $req->execute(array(
+            "ref_professeur"=> $this->getRefProfesseur()
+        ));
+        return $req->fetchAll();
+    }
+
     public function modifier(BDD $bdd){
 
     }

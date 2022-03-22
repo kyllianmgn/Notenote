@@ -7,9 +7,15 @@ require_once '../src/bdd/BDD.php';
 require_once '../src/modele/Php_Table.php';
 require_once '../src/modele/compte/Compte.php';
 require_once '../src/modele/compte/Professeur.php';
+require_once '../src/modele/Cours.php';
 require_once '../src/modele/Classe.php';
 require_once '../src/modele/Matiere.php';
+require_once '../src/modele/Dirige.php';
 $bdd = new BDD();
+$professeur = new Professeur(array(
+    "id_professeur"=>$_SESSION['id_professeur']
+));
+$professeur = $professeur->afficherById($bdd);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,10 +25,87 @@ $bdd = new BDD();
 </head>
 <body>
 <nav>
-    <h3>Notenote</h3>
+    <h3><a href="../index.php">Notenote</a></h3>
 </nav>
 <div class="vue">
     <div class="section gauche">
+        <div class="emploi-du-temps">
+            <?php
+            $mesCours = array();
+            $monCours = array();
+            $dirige = new Dirige(array(
+                    "ref_Professeur"=>$professeur['id_professeur']
+            ));
+            $dirige = $dirige->afficherByProfesseur($bdd);
+            foreach ($dirige as $diriges) {
+                $cours = new Cours(array(
+                    "id_cours" => $diriges['ref_cours']
+                ));
+                $cours = $cours->afficherById($bdd);
+                $matiere = new Matiere(array(
+                    "id_Matiere" => $cours['ref_matiere']
+                ));
+                $matiere = $matiere->afficherById($bdd);
+                $classe = new Classe(array(
+                    "id_Classe" => $cours['ref_classe']
+                ));
+                $classe = $classe->afficherById($bdd);
+                $monCours["jour"] = date('w', strtotime($cours['date']));
+                $monCours["heure_debut"] = date("Hi", strtotime($cours['heure_debut']));
+                $monCours["heure_fin"] = date("Hi", strtotime($cours['heure_fin']));
+                $monCours["date"] = $cours['date'];
+                $monCours['matiere'] = $matiere['nom'];
+                $monCours['classe'] = $classe['nom'];
+                array_push($mesCours, $monCours);
+            }
+            ?>
+            <div class="lundi jour">
+                <?php
+                foreach ($mesCours as $monCours){
+                    if ($monCours['jour']=='1'){
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Classe : ".$monCours['classe']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="mardi jour">
+                <?php
+                foreach ($mesCours as $monCours){
+                    if ($monCours['jour']=='2'){
+
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Classe : ".$monCours['classe']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="mercredi jour">
+                <?php
+                foreach ($mesCours as $monCours){
+                    if ($monCours['jour']=='3'){
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Classe : ".$monCours['classe']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="jeudi jour">
+                <?php
+                foreach ($mesCours as $monCours){
+                    if ($monCours['jour']=='4'){
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Classe : ".$monCours['classe']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="vendredi jour">
+                <?php
+                foreach ($mesCours as $monCours){
+                    if ($monCours['jour']=='5'){
+                        echo "<div class='cours' heure_debut='".$monCours['heure_debut']."' heure_fin='".$monCours['heure_fin']."' jour='".$monCours['date']."'>"."Matière : ".$monCours['matiere']." Classe : ".$monCours['classe']." Début : ".$monCours['heure_debut']." Fin : ".$monCours['heure_fin']."</div>";
+                    }
+                }
+                ?>
+            </div>
+        </div>
     </div>
     <div class="section droite">
         <form method="post" action="../src/traitrement/devoir/ajout.php">
@@ -47,6 +130,18 @@ $bdd = new BDD();
         </form>
     </div>
 </div>
+<script>
 
+    var cours = document.getElementsByClassName('cours')
+    for(var i = 0; i < cours.length; i++){
+        var bloc = cours[i];
+        var debut = bloc.getAttribute('heure_debut');
+        var fin = bloc.getAttribute('heure_fin');
+        var heure_debut = debut/2400*100;
+        var heure_fin = (fin-debut)/2400*100
+        console.log(heure_debut, heure_fin)
+        bloc.style.cssText = 'top: ' + heure_debut + '%; height: ' + heure_fin + '%;'
+    }
+</script>
 </body>
 </html>

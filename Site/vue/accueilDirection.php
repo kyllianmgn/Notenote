@@ -36,7 +36,7 @@ $etudiant = new Etudiant(array());
 </head>
 <body>
 <nav>
-    <h3>Notenote</h3>
+    <h3 class="title"><a href="../index.php">Notenote</a></h3>
 </nav>
 <div class="vue">
     <div class="section gauche">
