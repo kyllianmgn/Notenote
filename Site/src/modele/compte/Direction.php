@@ -58,6 +58,14 @@ class Direction extends Compte {
         }
     }
 
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE id_direction = :id_direction;");
+        $req->execute(array(
+            "id_direction"=>$this->getId_direction()
+        ));
+        return $req->fetch();
+    }
+
     /* @return mixed */
     public function getId_direction(){
         return $this->id_direction;
