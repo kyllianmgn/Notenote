@@ -38,6 +38,14 @@ class Direction extends Compte {
         ));
     }
 
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE id_direction = :id_direction;");
+        $req->execute(array(
+            "id_direction"=>$this->getId_direction()
+        ));
+        return $req->fetch();
+    }
+
     public function connexion(BDD $bdd){
         $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE mail = :mail AND mdp = :mdp");
         $req->execute(array(
@@ -45,7 +53,6 @@ class Direction extends Compte {
             "mdp"=>$this->getMdp()
         ));
         $res = $req->fetch();
-        var_dump($res);
         if($res){
             $this->setId_direction($res['id_direction']);
             $this->setNom($res['nom']);
@@ -58,12 +65,17 @@ class Direction extends Compte {
         }
     }
 
-    public function rechercher(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE id_direction = :id_direction;");
+    public function mdpoublie(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM direction WHERE mail = :mail");
         $req->execute(array(
-            "id_direction"=>$this->getId_direction()
+            "mail"=>$this->getMail(),
         ));
-        return $req->fetch();
+        $res = $req->fetch();
+        if($res){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /* @return mixed */
