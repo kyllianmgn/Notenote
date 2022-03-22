@@ -72,6 +72,19 @@ class Professeur extends Compte {
         return $req->fetch();
     }
 
+    public function mdpoublie(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM professeur WHERE mail = :mail");
+        $req->execute(array(
+            "mail"=>$this->getMail(),
+        ));
+        $res = $req->fetch();
+        if($res){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /* @return mixed */
     public function getId_professeur(){
         return $this->id_professeur;

@@ -40,6 +40,14 @@ class Etudiant extends Compte {
         ));
     }
 
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE id_etudiant = :id_etudiant;");
+        $req->execute(array(
+            "id_etudiant"=>$this->getId_etudiant()
+        ));
+        return $req->fetch();
+    }
+
     public function connexion(BDD $bdd){
         $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE mail = :mail AND mdp = :mdp;");
         $req->execute(array(
@@ -60,12 +68,17 @@ class Etudiant extends Compte {
         }
     }
 
-    public function rechercher(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE id_etudiant = :id_etudiant;");
+    public function mdpoublie(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE mail = :mail");
         $req->execute(array(
-            "id_etudiant"=>$this->getId_etudiant()
+            "mail"=>$this->getMail(),
         ));
-        return $req->fetch();
+        $res = $req->fetch();
+        if($res){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /* @return mixed */
