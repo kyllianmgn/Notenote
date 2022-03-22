@@ -26,11 +26,7 @@ $etudiant = new Etudiant(array());
     <script type="text/javascript" charset="utf8" src="../vendor/select2-4.0.13/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#listeEtudiant').DataTable({
-                "searching": true,
-                "filter": true
-            });
-
+            $('#listeEtudiant').DataTable();
         });
     </script>
 </head>
@@ -47,11 +43,10 @@ $etudiant = new Etudiant(array());
                         <td>Id Etudiant</td>
                         <td>Prenom</td>
                         <td>Nom</td>
-                        <td>Mail</td>
                         <td>Classe</td>
                     </tr>
                 </thead>
-
+                <tr>
                 <?php
                     foreach ($etudiant->afficher($bdd) as $etudiants) {
                         echo "<tr>";

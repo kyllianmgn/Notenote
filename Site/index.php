@@ -15,6 +15,11 @@ session_destroy();
     <nav>
         <h3>Notenote</h3>
     </nav>
+    <div class="art">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Arnold_B%C3%B6cklin_-_Die_Toteninsel_V_%28Museum_der_bildenden_K%C3%BCnste_Leipzig%29.jpg">
+        <div class="nomOeuvre"><p><u>L'île des Morts</u></p></div>
+        <div class="nomArtiste">Arnold Böcklin</div>
+    </div>
     <div class="bloc-connexion">
         <h2>Connexion à Notenote</h2>
         <button id="button-etudiant">Etudiant</button>
@@ -30,6 +35,7 @@ session_destroy();
                 <br>
                 <input type="submit" value="Se Connecter">
             </form>
+                <button><a href="vue/forgotEleve.php">Mot de passe oublié ?</a></button>
         </div>
         <div hidden class="inner-bloc" id="professeur">
             <button class="hide">Retour</button>
@@ -41,6 +47,9 @@ session_destroy();
                 <br>
                 <input type="submit" value="Se Connecter">
             </form>
+            <form>
+                <input type="submit" value="Mot de passe oublié ?">
+            </form>
         </div>
         <div hidden class="inner-bloc" id="direction">
             <button class="hide">Retour</button>
@@ -51,6 +60,9 @@ session_destroy();
                 <input type="password" name="mdp" placeholder="Mot De Passe">
                 <br>
                 <input type="submit" value="Se Connecter">
+            </form>
+            <form>
+                <input type="submit" value="Mot de passe oublié ?">
             </form>
         </div>
     </div>
