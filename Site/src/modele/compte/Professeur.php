@@ -20,6 +20,14 @@ class Professeur extends Compte {
         return $req->fetchAll();
     }
 
+    public function afficherById(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM professeur WHERE id_professeur=:id_professeur;");
+        $req->execute(array(
+            "id_professeur"=>$this->getId_professeur()
+        ));
+        return $req->fetch();
+    }
+
     public function modifier(BDD $bdd){
         $req = $bdd->getBdd()->prepare("UPDATE professeur SET nom = :nom, prenom = :prenom, mail = :mail, mdp = :mdp WHERE id_professeur = :id_professeur;");
         $req->execute(array(

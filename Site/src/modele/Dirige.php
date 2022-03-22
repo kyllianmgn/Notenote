@@ -21,6 +21,15 @@ class Dirige extends Php_Table
         return $req->fetchAll();
     }
 
+    public function afficherByCours(BDD $bdd)
+    {
+        $req = $bdd->getBdd()->prepare("SELECT * FROM dirige WHERE ref_cours=:ref_cours");
+        $req->execute(array(
+            "ref_cours"=> $this->getRefCours()
+        ));
+        return $req->fetch();
+    }
+
     public function modifier(BDD $bdd){
 
     }
