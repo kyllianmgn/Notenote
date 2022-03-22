@@ -1,6 +1,11 @@
 @font-face {
-    font-family: 'Handwriting';
+    font-family: 'MadeTommy';
     src: url("../font/MADE TOMMY Regular_PERSONAL USE.otf");
+}
+
+@font-face {
+    font-family: 'Handwriting';
+    src: url("../font/handwriting-draft_free-version.ttf");
 }
 
 body {
@@ -29,7 +34,27 @@ nav a:hover{
 nav h3{
     margin: 0;
     padding: 13px;
+    font-family: MadeTommy, serif;
+}
+
+.art{
+    width: 30%;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+
+.art img{
+    width: 100%;
+
+}
+
+.art > .nomArtiste,.art > .nomOeuvre{
+    position: absolute;
+    right: 0;
+    opacity: 1;
     font-family: Handwriting, serif;
+    font-size: 2em;
 }
 
 .bloc-connexion{
@@ -39,7 +64,7 @@ nav h3{
     width: 20%;
     height: 50%;
     background-color: #2DC653;
-    font-family: Handwriting, serif;
+    font-family: MadeTommy, serif;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -61,12 +86,17 @@ nav h3{
     justify-self: flex-end;
     transition: background-color .1s ease;
     font-size: 25px;
-    font-family: Handwriting, serif;
+    font-family: MadeTommy, serif;
 
 }
 
 .bloc-connexion button:hover{
     background-color: #B7EFC5;
+    cursor: pointer;
+}
+
+.forgotPsw{
+    width: 50%;
 }
 
 .inner-bloc{
@@ -96,6 +126,10 @@ input[type='text'],input[type='password'],input[type='submit'],select,input[type
     border: 1px black solid;
     margin: 10px;
     font-size: 1em;
+}
+
+input[type='submit']{
+    cursor: pointer;
 }
 
 #selectCours{
@@ -128,6 +162,17 @@ input[type='text'],input[type='password'],input[type='submit'],select,input[type
     display: inline-block;
     width: 25vw;
     height: 90vh;
+}
+
+.droite h2{
+    text-align: center;
+    font-family: MadeTommy, serif;
+}
+
+.devoir{
+    background-color: white;
+    border: 1px black solid;
+    font-family: MadeTommy, serif;
 }
 
 .wrapper{

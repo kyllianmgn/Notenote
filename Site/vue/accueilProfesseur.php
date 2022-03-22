@@ -123,6 +123,7 @@ $professeur = $professeur->afficherById($bdd);
         </div>
     </div>
     <div class="section droite">
+        <h2>Ajouter devoir</h2>
         <form method="post" action="../src/traitrement/devoir/ajout.php">
             <textarea style="resize: vertical; width: 50%; margin: 0 auto;" name="description" placeholder="Description du devoir"></textarea><br>
             <select id="selectProfesseur" name="ref_classe">

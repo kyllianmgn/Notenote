@@ -142,11 +142,13 @@ $etudiant = $etudiant->rechercher($bdd);
         </div>
     </div>
     <div class="section droite">
+        <h2>Devoirs</h2>
         <?php
             $devoir = new Devoir(array(
                     "ref_classe"=>$etudiant['ref_classe']
             ));
         foreach ($devoir->rechercher($bdd) as $devoirs){
+            echo "<div class='devoir'>";
             $professeur = new Professeur(array(
                 "id_professeur"=>$devoirs['ref_professeur']
             ));
@@ -156,12 +158,12 @@ $etudiant = $etudiant->rechercher($bdd);
             ));
             $matiere = $matiere->rechercher($bdd);
             echo "'".$devoirs['description']."' donnée par ".$professeur['nom']." pour la matière ".$matiere['nom'];
+            echo "</div>";
         }
         ?>
     </div>
 </div>
 <script>
-
     var cours = document.getElementsByClassName('cours')
     for(var i = 0; i < cours.length; i++){
         var bloc = cours[i];

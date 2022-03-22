@@ -80,4 +80,9 @@ class Dirige extends Php_Table{
     {
         $this->ref_professeur = $ref_professeur;
     }
+
+    public function rechercher(BDD $bdd)
+    {
+        // TODO: Implement rechercher() method.
+    }
 };
