@@ -3,7 +3,6 @@
 class Professeur extends Compte {
     private $id_professeur;
 
-
     public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO professeur(nom, prenom, mail, mdp) VALUES (:nom,:prenom,:mail,:mdp);");
         $req->execute(array(
@@ -55,6 +54,14 @@ class Professeur extends Compte {
         } else {
             return false;
         }
+    }
+
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM professeur WHERE id_professeur = :id_professeur;");
+        $req->execute(array(
+            "id_professeur"=>$this->getId_professeur()
+        ));
+        return $req->fetch();
     }
 
     /* @return mixed */

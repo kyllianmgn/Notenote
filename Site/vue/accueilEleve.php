@@ -16,7 +16,7 @@ $bdd = new BDD;
 $etudiant = new Etudiant(array(
         "id_etudiant"=>$_SESSION['id_etudiant']
 ));
-$etudiant = $etudiant->afficherById($bdd);
+$etudiant = $etudiant->rechercher($bdd);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

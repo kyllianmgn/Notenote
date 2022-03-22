@@ -4,7 +4,6 @@ class Etudiant extends Compte {
     private $id_etudiant;
     private $ref_classe;
 
-
     public function ajout(BDD $bdd){
         $req = $bdd->getBdd()->prepare("INSERT INTO etudiant(nom, prenom, mail, mdp, ref_classe) VALUES (:nom,:prenom,:mail,:mdp,:ref_classe);");
         $req->execute(array(
@@ -20,14 +19,6 @@ class Etudiant extends Compte {
         $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant;");
         $req->execute();
         return $req->fetchAll();
-    }
-
-    public function afficherById(BDD $bdd){
-        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE id_etudiant=:id_etudiant;");
-        $req->execute(array(
-            "id_etudiant"=>$this->getId_etudiant()
-        ));
-        return $req->fetch();
     }
 
     public function modifier(BDD $bdd){
@@ -67,6 +58,14 @@ class Etudiant extends Compte {
         } else {
             return false;
         }
+    }
+
+    public function rechercher(BDD $bdd){
+        $req = $bdd->getBdd()->prepare("SELECT * FROM etudiant WHERE id_etudiant = :id_etudiant;");
+        $req->execute(array(
+            "id_etudiant"=>$this->getId_etudiant()
+        ));
+        return $req->fetch();
     }
 
     /* @return mixed */
