@@ -16,6 +16,7 @@ session_destroy();
 <div class="bloc-mdp">
     <h2>Changer le mot de passe</h2>
     <form method="post" action="src/traitrement/etudiant/">
+        <input class="code" type="text" name="code" placeholder="Rentrez le code reçu par mail">
         <input class="forgotPsw" type="text" name="password" placeholder="Rentrer votre nouveau mot de passe">
         <br>
         <input type="submit" value="Changer mon mot de passe">
