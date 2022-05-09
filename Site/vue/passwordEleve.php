@@ -14,12 +14,12 @@ session_destroy();
     <h3><a href="../index.php">Notenote</a></h3>
 </nav>
 <div class="bloc-mdp">
-    <h2>Mot de passe oublié</h2>
-        <form method="post" action="src/traitrement/etudiant/mdpoublie.php">
-            <input class="forgotPsw" type="text" name="mail" placeholder="Rentrer votre adresse mail">
-            <br>
-            <input type="submit" value="Je veux recevoir un mail pour changer mon mot de passe">
-        </form>
+    <h2>Changer le mot de passe</h2>
+    <form method="post" action="src/traitrement/etudiant/">
+        <input class="forgotPsw" type="text" name="password" placeholder="Rentrer votre nouveau mot de passe">
+        <br>
+        <input type="submit" value="Changer mon mot de passe">
+    </form>
 </div>
 </body>
 </html>
