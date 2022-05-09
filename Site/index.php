@@ -48,7 +48,7 @@ session_destroy();
                 <input type="submit" value="Se Connecter">
             </form>
             <form>
-                <input type="submit" value="Mot de passe oublié ?">
+                <button><a href="vue/forgotProfesseur.php">Mot de passe oublié ?</a></button>
             </form>
         </div>
         <div hidden class="inner-bloc" id="direction">
@@ -62,7 +62,7 @@ session_destroy();
                 <input type="submit" value="Se Connecter">
             </form>
             <form>
-                <input type="submit" value="Mot de passe oublié ?">
+                <button><a href="vue/forgotDirection.php">Mot de passe oublié ?</a></button>
             </form>
         </div>
     </div>
